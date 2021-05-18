@@ -15,11 +15,8 @@ Route::get('/', function () {
 });
 
 
-// /posts/(記事ID)　記事IDが$idになる
-Route::get('/posts/{post}', function ($id) {
-
-    // 記事IDが$idの記事を取得
-    $post = Post::findOrFail($id);
+// /posts/(記事ID)　
+Route::get('/posts/{post}', function (Post $post) {
 
     // $post(記事)
     return view('post', [
