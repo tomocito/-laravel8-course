@@ -16,7 +16,7 @@ Route::get('/', function () {
 
 
 // /posts/(記事ID)　
-Route::get('/posts/{post}', function (Post $post) {
+Route::get('/posts/{post:slug}', function (Post $post) {
 
     // $post(記事)
     return view('post', [
