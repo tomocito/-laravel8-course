@@ -5,9 +5,8 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::get('/', function () {
-
     // すべての記事を取得
-    $posts = Post::all();
+    $posts = Post::with('category')->get();
 
     // $posts（すべての記事のコレクション）をpostsとしてviewに送る
     return view('posts', [
