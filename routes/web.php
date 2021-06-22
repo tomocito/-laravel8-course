@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     // すべての記事を取得
-    $posts = Post::latest()->with('category')->get();
+    $posts = Post::latest()->get();
 
     // $posts（すべての記事のコレクション）をpostsとしてviewに送る
     return view('posts', [
